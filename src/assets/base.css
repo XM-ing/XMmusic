@@ -1,0 +1,45 @@
+:root{
+    --main-text-c:rgba(255,255,255,.8);
+    --main-text-c-hover:rgba(255,255,255,1);
+    --main-tit-bg:rgba(44, 44, 44,.4);
+    --main-tit-bg-hover:rgba(55, 55, 55,.2);
+    --main-bg:#181818;
+    --main-border-c:rgba(255,255,255,.5);
+    
+    --search-input-bg:rgba(255,255,255,.1);
+    --search-input-bg-hover:rgba(255,255,255,.2);
+}
+:root.light{
+    --main-text-c:rgba(0,0,0,.8);
+    --main-text-c-hover:rgba(0,0,0,1);
+    --main-tit-bg:rgba(144, 144, 144,.5);
+    --main-tit-bg-hover:rgba(155, 155, 155,.4);
+    --main-bg:rgb(240,240,240);
+    --main-border-c:rgba(0,0,0,.5);
+    
+    --search-input-bg:rgba(0,0,0,.1);
+    --search-input-bg-hover:rgba(0,0,0,.2);
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    user-select:none;
+}
+body{
+    background-color:var(--main-bg);
+    overflow:hidden;
+}
+img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    color: transparent; /* 防止图片被搜索引擎索引 */
+}
+img[alt=""] {
+    visibility: hidden; /* 保持占位，但不显示图像 */
+}
+ul{
+    list-style:none;
+}

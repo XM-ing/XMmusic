@@ -1,0 +1,93 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist-electron/index.js",
+  "scripts": {
+    "dev": "chcp 65001 && vite",
+    "build": "rimraf dist-electron && vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/gif.js": "^0.2.5",
+    "axios": "^1.7.9",
+    "color-thief": "^2.2.5",
+    "colorthief": "^2.6.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "get-port": "^7.1.0",
+    "gif.js": "^0.2.0",
+    "gsap": "^3.12.7",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "vue": "^3.5.13",
+    "vue-lazyload": "^3.0.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.10.7",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "color-thief": "^2.2.5",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-devtools-installer": "^4.0.0",
+    "npm-run-all2": "^7.0.2",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.5",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "vite-plugin-vue-devtools": "^7.6.8",
+    "vue-lazyload": "^3.0.0",
+    "vue-tsc": "^2.1.10"
+  },
+  "build": {
+    "appId": "com.xmmusic.desktop",
+    "productName": "XMmusic",
+    "asar": true,
+    "copyright": "Copyright © 2025 XMmusic",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "./dist",
+      "./dist-electron",
+      "./package.json"
+    ],
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080"
+      }
+    ],
+    "releaseInfo": {
+      "releaseNotes": "版本更新日志"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+import{_ as n,c as o,a as r,o as t}from"./index-f0yOn2YS.js";const s={};function a(c,e){return t(),o("div",null,e[0]||(e[0]=[r("h1",null,"暂未开放",-1)]))}const _=n(s,[["render",a]]);export{_ as default};
